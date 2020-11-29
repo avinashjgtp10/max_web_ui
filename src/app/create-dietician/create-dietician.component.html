@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="col-md-9 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h2>Add Dietician</h2>
+            </div>
+            <div class="col-md-10 mx-auto">
+                <div class="card-body">
+                    <div class="form">
+                        <form class="form" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+                            <div class="form-group row ">
+                                <label for="name" class="col-md-4 col-form-label">Name
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="text" name="name" id="txtName" ngModel required
+                                        pattern="[a-zA-Z][a-zA-Z]+" #nameDietician="ngModel"
+                                        placeholder="Please Enter Name" />
+                                    <div *ngIf="nameDietician.touched">
+                                        <div class="alert-danger" *ngIf="nameDietician.errors?.required">
+                                            * Name is Required
+                                        </div>
+                                        <div class="alert-danger" *ngIf="nameDietician.errors?.pattern">
+                                            Invalid Name
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="exp" class="col-md-4 col-form-label">Experience
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="number" name="exp" id="txtExp" ngModel required
+                                        #expDietician="ngModel" placeholder="Please Enter Experience" />
+                                    <div *ngIf="expDietician.touched">
+                                        <div class="alert-danger" *ngIf="expDietician.errors?.required">
+                                            * Experience is Required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="raiting" class="col-md-4 col-form-label">Raiting
+                                </label>
+                                <div class="col-md-8 ">
+                                    <input class="form-control " type="text" name="raiting" id="txtRaiting" ngModel
+                                        required #raitingDietician="ngModel" placeholder="Please Enter Raiting" />
+                                    <div *ngIf="raitingDietician.touched">
+                                        <div class="alert-danger" *ngIf="raitingDietician.errors?.required">
+                                            * Raiting is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="specialization" class="col-md-4 col-form-label">Specialization
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control " type="text" name="specialization"
+                                        id="txtSpecialization" ngModel required #specialializationDietician="ngModel"
+                                        placeholder="Please Enter Specialization" />
+                                    <div *ngIf="specialializationDietician.touched">
+                                        <div class="alert-danger" *ngIf="specialializationDietician.errors?.required">
+                                            * Specialization is Required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="availability" class="col-md-4 col-form-label">Availabiity
+                                </label>
+                                <div class="col-md-8">
+                                    <select class="form-control " type="text" name="availability" id="availability"
+                                        ngModel required #availabilitySDietiian="ngModel">
+                                        <option>Chat</option>
+                                        <option>Video</option>
+                                    </select>
+                                    <div *ngIf="availabilitySDietiian.touched">
+                                        <div class="alert-danger" *ngIf="availabilitySDietiian.errors?.required">
+                                            * Please select any one option
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="dieticiancontact" class="col-md-4 col-form-label">Contact
+                                </label>
+                                <div class="col-md-8"> <input class="form-control " maxlength="10" minlength="10"
+                                        type="text" name="dieticiancontact" id="txtdieticiancontact" ngModel required
+                                        pattern="^[6-9]\d{9}$" #dieticiancontact="ngModel"
+                                        placeholder="Please Enter Contact" />
+                                    <div *ngIf="dieticiancontact.touched">
+                                        <div class="alert-danger" *ngIf="dieticiancontact.errors?.required">
+                                            * Mobile Number is Required
+                                        </div>
+                                        <div class="alert-danger"
+                                            *ngIf="dieticiancontact.errors?.pattern ||dieticiancontact.errors?.pattern">
+                                            invalid Mobile Number
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label error-message ">Email
+                                </label>
+                                <div class="col-md-8"> <input class="form-control " type="text" name="email"
+                                        id="txtEmail" ngModel required
+                                        pattern="[a-z_A-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z_A-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z_A-Z0-9](?:[a-z_A-Z0-9-]*[a-z_A-Z0-9])?.)+[a-z_A-Z0-9](?:[a-z_A-Z0-9-]*[a-z_A-Z0-9])?"
+                                        #emailDietician="ngModel" placeholder="Please Enter Email" />
+                                    <div *ngIf="emailDietician.touched">
+                                        <div class="alert-danger" *ngIf="emailDietician.errors?.required">
+                                            * Email is Required
+                                        </div>
+                                        <div class="alert-danger" *ngIf="emailDietician.errors?.pattern">
+                                            invalid Email
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" name="button" [disabled]="frm.invalid">
+                                    Add
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
