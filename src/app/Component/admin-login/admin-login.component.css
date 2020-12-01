@@ -1,0 +1,137 @@
+h2 {
+    width: auto;
+    background-color: whitesmoke;
+    padding: 20px 25px;
+    margin: -10px -40px;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+#indicate {
+    color: red
+}
+
+.bg {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.main {
+    background-color: whitesmoke;
+    width: 400px;
+    padding: 10px 50px 25px;
+    border: solid 1px black;
+    border-radius: 4px;
+    float: left;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+img {
+    width: 138px;
+    height: 138px;
+    background-color: whitesmoke;
+}
+
+label {
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+b {
+    color: white;
+}
+
+a,
+a:hover {
+    color: #333
+}
+
+button {
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+
+a {
+    color: blue;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#btn1 {
+    width: 100%;
+    float: left;
+    border: 1px solid black;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -19px!important;
+    margin-left: -15px!important;
+}
+
+.error-message {
+    color: red
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.loading {
+    color: white;
+}
+
+.modal-header {
+    padding: 35px 50px;
+}
+
+.modal-header,
+h4 {
+    background-color: #5cb85c;
+    color: white !important;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.close {
+    font-size: 30px;
+    color: white !important;
+    text-align: center;
+    margin-left: -90px;
+    margin-top: -70px;
+}
+
+.fas {
+    color: #000 !important;
+    font-size: xx-large;
+}
+
+h4 {
+    margin-left: 50px;
+}
+
+.modal-footer {
+    background-color: #f9f9f9;
+}
+
+.modal-body {
+    padding: 40px 50px;
+}
+
+.btn-danger {
+    width: 30%;
+}

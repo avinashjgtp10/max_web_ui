@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <div class="sidebar-heading">Start Bootstrap </div>
+            <div class="list-group list-group-flush">
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Calories</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a routerLink="/app-admin-dashboard/app-employee" routerLinkActive="active">Calories
+                                    Item</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="#homeDieticianSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Dietician</a>
+                        <ul class="collapse list-unstyled" id="homeDieticianSubmenu">
+                            <li>
+                                <a routerLink="/app-admin-dashboard" routerLinkActive="active">Add Dietician
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- /#sidebar-wrapper -->
+
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top row " id="topheader">
+            <button class="sidebar-toggler" data-target="#sidebar-wrapper" data-toggle="collapse"><i
+                    class="fas fa-bars"></i></button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i> </button>
+
+            <div class="col-md-8">
+                <div class="collapse navbar-collapse float-left" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="navbar-brand" routerLink="/app-admin-dashboard"> <i class="fas fa-home"></i>Admin
+                                Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="collapse navbar-collapse float-right" id="ftco-nav">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- <li class="nav-item">
+                            <a href="#" class="navbar-brand">
+                                <span>Setting</span>
+                                <i class="fas fa-cog"></i>
+                            </a>
+                        </li>-->
+                        <li class="nav-item">
+                            <a href="#logoutModal" class="navbar-brand">
+                                <span>Logout</span>
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class='container' style="margin-top:100px !important;">
+
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</body>
+
+</html>

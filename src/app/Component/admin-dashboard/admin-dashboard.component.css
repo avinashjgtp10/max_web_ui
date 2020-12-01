@@ -1,0 +1,150 @@
+#wrapper {
+    overflow-x: hidden;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar-wrapper ul.components {
+    padding: 0.2px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar-wrapper ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar-wrapper ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar-wrapper ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar-wrapper ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    background: #0c5582;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    margin-top: 80px;
+    padding: 20px;
+    background: #05283c;
+}
+
+#sidebar-wrapper .list-group {
+    width: 15rem;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+}
+
+@media (min-width: 100px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#p1 {
+    text-align: center;
+}
+
+nav {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+.container {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+nav {
+    background-color: #06486e !important;
+    color: #000000 !important;
+}
+
+.sidebar-toggler {
+    background-color: #06486e !important;
+    color: #000000 !important;
+}
+
+.navbar-brand {
+    margin-right: 30px;
+    text-decoration: none;
+    padding: 12px 23px;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    color: white !important;
+}
+
+.navbar-brand:hover {
+    background-color: #05283c !important;
+}
+
+button:active {
+    border-style: none !important;
+    border: 0ch !important;
+}
+
+.fas {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+i {
+    font-size: x-large;
+}

@@ -1,0 +1,1 @@
+export const baseurl = "https://pristine-lake-clark-35296.herokuapp.com/api/v1/"
