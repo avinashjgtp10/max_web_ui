@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
 import { AdminLoginComponent } from './Component/admin-login/admin-login.component';
 import { EmployeeComponent } from './Component/employee/employee.component';
+import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
         path: '',
         component: CreateDieticianComponent,
       },
+      {
+        path: 'app-create-diet-plan',
+        component: CreateDietPlanComponent,
+
+      }
     ]
 
   },

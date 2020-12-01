@@ -13,6 +13,9 @@ import { EmployeeComponent } from './Component/employee/employee.component';
 import { HelloComponent } from './Component/hello/hello.component';
 import { CreateDieticianComponent } from './create-dietician/create-dietician.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
+//import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,16 @@ import { ToastrModule } from 'ngx-toastr';
     DataTableComponent,
     EmployeeComponent,
     HelloComponent,
-    CreateDieticianComponent
+    CreateDieticianComponent,
+    CreateDietPlanComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    AngularMultiSelectModule,
     FormsModule,
     AppRoutingModule,
+    //NgMultiSelectDropDownModule.forRoot(),
     NgmaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,

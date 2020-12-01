@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="col-md-9 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                <h3>Create Diet Plan</h3>
+            </div>
+            <div class="col-md-10 mx-auto">
+                <div class="card-body">
+                    <div class="form">
+                        <form class="form" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+
+                            <div class="form-group row ">
+                                <label for="startdate" class="col-md-4 col-form-label">Start Date
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="date" name="startdate" id="txtStartdate" ngModel
+                                        required #startdate="ngModel" placeholder="Please Enter start date" />
+                                    <div *ngIf="startdate.touched">
+                                        <div class="alert-danger" *ngIf="startdate.errors?.required">
+                                            * Start Date is Required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row ">
+                                <label for="lblweeks" class="col-md-4 col-form-label">Weeks
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="number" min="0" name="lblweeks" id="txtlblweeks"
+                                        ngModel required #lblweeks="ngModel" placeholder="Please Enter Weeks" />
+                                    <div *ngIf="lblweeks.touched">
+                                        <div class="alert-danger" *ngIf="lblweeks.errors?.required">
+                                            * Weeks is Required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row ">
+                                <label for="repetition" class="col-md-4 col-form-label">Repetition
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="number" min="0" name="repetition"
+                                        id="txtRepetition" ngModel required #repetition="ngModel"
+                                        placeholder="Please Enter Repetition" />
+                                    <div *ngIf="repetition.touched">
+                                        <div class="alert-danger" *ngIf="repetition.errors?.required">
+                                            * Repetition is Required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="item" class="col-md-4 col-form-label">Item
+                                </label>
+                                <div class="col-md-8">
+                                    <angular2-multiselect [data]="dropdownList" name="products"
+                                        [(ngModel)]="selectedItems" [settings]="dropdownSettings"
+                                        (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"
+                                        (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
+                                    </angular2-multiselect>
+                                    <!-- <div *ngIf="items.touched">
+                                        <div class="alert-danger" *ngIf="items.errors?.required">
+                                            * Please select Item
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary float-right" name="button"
+                                    [disabled]="frm.invalid">
+                                    Create
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
