@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "helth-service"
+  "defaultProject": "helth-service",
+  "cli": {
+    "analytics": false
+  }
 }

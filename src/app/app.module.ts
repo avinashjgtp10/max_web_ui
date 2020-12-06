@@ -13,6 +13,13 @@ import { EmployeeComponent } from './Component/employee/employee.component';
 import { HelloComponent } from './Component/hello/hello.component';
 import { CreateDieticianComponent } from './create-dietician/create-dietician.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ChatComponent } from './Component/chat/chat.component';
+import { TimeagoModule } from 'ngx-timeago';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ChatPipePipe } from './pipes/ChatPipe/chat-pipe.pipe';
+const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
+
 
 @NgModule({
   declarations: [
@@ -22,7 +29,9 @@ import { ToastrModule } from 'ngx-toastr';
     DataTableComponent,
     EmployeeComponent,
     HelloComponent,
-    CreateDieticianComponent
+    CreateDieticianComponent,
+    ChatComponent,
+    ChatPipePipe,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +41,8 @@ import { ToastrModule } from 'ngx-toastr';
     NgmaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    SocketIoModule.forRoot(config),
+    TimeagoModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 6000,
       progressBar: true,
