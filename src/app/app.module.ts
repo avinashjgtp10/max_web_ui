@@ -14,7 +14,6 @@ import { HelloComponent } from './Component/hello/hello.component';
 import { CreateDieticianComponent } from './create-dietician/create-dietician.component';
 import { ToastrModule } from 'ngx-toastr';
 import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
-//import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 @NgModule({
@@ -34,7 +33,6 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
     AngularMultiSelectModule,
     FormsModule,
     AppRoutingModule,
-    //NgMultiSelectDropDownModule.forRoot(),
     NgmaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-diet-plan',
@@ -9,29 +10,29 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
   styleUrls: ['./create-diet-plan.component.css']
 })
 export class CreateDietPlanComponent implements OnInit {
+  [x: string]: any;
+  dietStartDate = "";
+  dietWeeks = "";
+  dietRepetition = "";
+  dietDay = "";
+  dietTime = "";
+  resultArray: any = [];
   dropdownList = [];
   selectedItems = [];
   dropdownSettings = {};
+  constructor(private fb: FormBuilder,
+    private toastr: ToastrService) { }
 
-  constructor(private fb: FormBuilder) { }
-
+  /**
+   * Multiselect Dropdown
+   */
   ngOnInit(): void {
     this.dropdownList = [
-      { "id": 1, "itemName": "Marigold" },
+      { "id": 1, "itemName": "Mariegold" },
       { "id": 2, "itemName": "White bread" },
-      { "id": 3, "itemName": "Chicken Avocado BLT Wrap" },
+      { "id": 3, "itemName": "Chicken Avocado" },
       { "id": 4, "itemName": "Roasted Veggie" },
       { "id": 5, "itemName": "Apples " },
-      // { "id": 6, "itemName": "Avocados" },
-      // { "id": 7, "itemName": "Blueberries" },
-      // { "id": 8, "itemName": "Lean beef" },
-      // { "id": 9, "itemName": "Walnuts" },
-      // { "id": 10, "itemName": "Broccoli" },
-      // { "id": 11, "itemName": "Carrots" },
-      // { "id": 12, "itemName": "Cauliflower" },
-      // { "id": 13, "itemName": "Cucumber" },
-      // { "id": 14, "itemName": "Tomatoes" },
-      // { "id": 15, "itemName": "Salmon" }
     ];
     // this.selectedItems = [
     //   { "id": 2, "itemName": "Boiled Potatoes" },
@@ -41,7 +42,7 @@ export class CreateDietPlanComponent implements OnInit {
     // ];
     this.dropdownSettings = {
       singleSelection: false,
-      text: "Select Foods",
+      text: "Select Items",
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
       enableSearchFilter: true,
@@ -62,7 +63,36 @@ export class CreateDietPlanComponent implements OnInit {
   onDeSelectAll(items: any) {
     console.log(items);
   }
-  onSubmit(form: NgForm) {
 
+  /**
+   * 
+   * @param form 
+   * Form Submitted
+   */
+  onSubmit(form: NgForm) {
+    debugger
+    var name = "";
+    var items = this.selectedItems;
+    for (var i = 0; i < items.length; i++) {
+      console.log(items[i]);
+      var dietitem = items[i];
+      name = name + " , " + dietitem.itemName;
+    }
+    var startDate = this.dietStartDate;
+    var weeks = this.dietWeeks;
+    var time = this.dietTime;
+    var repetition = this.dietRepetition;
+    var day = this.dietDay;
+    let payload = {
+      dietStartDate: startDate,
+      dietWeeks: weeks,
+      dietTime: time,
+      dietRepetition: repetition,
+      dietDay: day,
+      selectedItems: name,
+    }
+    this.resultArray.push(payload);
+    this.toastr.success("Diet Plan Added");
+    form.reset();
   }
 }
