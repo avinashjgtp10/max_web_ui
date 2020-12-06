@@ -20,6 +20,8 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatPipePipe } from './pipes/ChatPipe/chat-pipe.pipe';
 const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
 
+import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -32,10 +34,12 @@ const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
     CreateDieticianComponent,
     ChatComponent,
     ChatPipePipe,
+    CreateDietPlanComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    AngularMultiSelectModule,
     FormsModule,
     AppRoutingModule,
     NgmaterialModule,

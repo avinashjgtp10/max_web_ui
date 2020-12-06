@@ -7,6 +7,7 @@ import { EmployeeComponent } from "./Component/employee/employee.component";
 import { ChatComponent } from "./Component/chat/chat.component";
 import { ChatDashboardComponent } from "./Component/chat-dashboard/chat-dashboard.component";
 import { from } from "rxjs";
+import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,12 @@ const routes: Routes = [
         path: "addDietician",
         component: CreateDieticianComponent,
       },
+      {
+        path: 'app-create-diet-plan',
+        component: CreateDietPlanComponent,
+
+      }
+    ]
 
       {
         path: "chatDashboard",
