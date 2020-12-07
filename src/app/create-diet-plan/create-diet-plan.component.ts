@@ -16,6 +16,7 @@ export class CreateDietPlanComponent implements OnInit {
   dietRepetition = "";
   dietDay = "";
   dietTime = "";
+  dietUserName = "";
   resultArray: any = [];
   dropdownList = [];
   selectedItems = [];
@@ -71,19 +72,21 @@ export class CreateDietPlanComponent implements OnInit {
    */
   onSubmit(form: NgForm) {
     debugger
-    var name = "";
-    var items = this.selectedItems;
+    let name = "";
+    let items = this.selectedItems;
     for (var i = 0; i < items.length; i++) {
       console.log(items[i]);
       var dietitem = items[i];
       name = name + " , " + dietitem.itemName;
     }
-    var startDate = this.dietStartDate;
-    var weeks = this.dietWeeks;
-    var time = this.dietTime;
-    var repetition = this.dietRepetition;
-    var day = this.dietDay;
+    let userName = this.dietUserName;
+    let startDate = this.dietStartDate;
+    let weeks = this.dietWeeks;
+    let time = this.dietTime;
+    let repetition = this.dietRepetition;
+    let day = this.dietDay;
     let payload = {
+      dietUserName: userName,
       dietStartDate: startDate,
       dietWeeks: weeks,
       dietTime: time,
