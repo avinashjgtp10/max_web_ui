@@ -33,13 +33,10 @@ const routes: Routes = [
       {
         path: 'app-create-diet-plan',
         component: CreateDietPlanComponent,
-
-      }
-    ]
-
+      },
       {
         path: "chatDashboard",
-        component: ChatComponent,
+        component: ChatDashboardComponent,
         children: [
           {
             path: "chat",
