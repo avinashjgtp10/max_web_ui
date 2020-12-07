@@ -1,0 +1,39 @@
+<header class="row chat-header">
+    <div class="col-md-1">
+      <img src="https://ui-avatars.com/api/?name=John+Doe" class="avtar" />
+    </div>
+    <div >
+      <p>Avinash Jagtap</p>
+      <p>{{chatStatus}}</p>
+    </div>
+  </header>
+  <section class="chat-container" #target>
+    <div
+      *ngFor="let message of messages"
+      class="chat-bubble"
+      [(ngClass)]="message.type"
+    >
+      <h6>{{ message.text }}</h6>
+      <p>{{ message.created | timeago:live}}</p>
+    </div>
+  </section>
+  <footer class="row chat-footer wall">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        value=""
+        #message
+        [(ngModel)]="newMessage"
+        placeholder=""
+        aria-label="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="sendMessage()">
+          Send
+        </button>
+      </div>
+    </div>
+  </footer>
+  

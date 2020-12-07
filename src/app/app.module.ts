@@ -13,6 +13,13 @@ import { EmployeeComponent } from './Component/employee/employee.component';
 import { HelloComponent } from './Component/hello/hello.component';
 import { CreateDieticianComponent } from './create-dietician/create-dietician.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ChatComponent } from './Component/chat/chat.component';
+import { TimeagoModule } from 'ngx-timeago';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ChatPipePipe } from './pipes/ChatPipe/chat-pipe.pipe';
+const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
+
 import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
@@ -25,6 +32,8 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
     EmployeeComponent,
     HelloComponent,
     CreateDieticianComponent,
+    ChatComponent,
+    ChatPipePipe,
     CreateDietPlanComponent
   ],
   imports: [
@@ -36,6 +45,8 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
     NgmaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    SocketIoModule.forRoot(config),
+    TimeagoModule.forRoot(),
     ToastrModule.forRoot({
       timeOut: 6000,
       progressBar: true,

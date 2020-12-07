@@ -24,7 +24,11 @@
                             class="dropdown-toggle">Dietician</a>
                         <ul class="collapse list-unstyled" id="homeDieticianSubmenu">
                             <li>
-                                <a routerLink="/app-admin-dashboard" routerLinkActive="active">Add Dietician
+                                <a routerLink="/app-admin-dashboard/addDietician" routerLinkActive="active">Add Dietician
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/app-admin-dashboard/chatDashboard" routerLinkActive="active">Chat Dashboard
                                 </a>
                             </li>
                             <li>
@@ -80,6 +84,7 @@
         <div class='container' style="margin-top:100px !important;">
 
             <router-outlet></router-outlet>
+            
         </div>
     </div>
 </body>
