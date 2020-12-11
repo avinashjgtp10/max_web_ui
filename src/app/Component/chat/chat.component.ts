@@ -14,14 +14,14 @@ export class ChatComponent implements OnInit {
   messageList: string[] = [];
   currentUser = "";
   cid: any;
-  chatStatus:string = "Offline"
+  chatStatus: string = "Offline"
 
   messages: Array<any> = [];
 
   constructor(
     private socket: Socket,
     // private localStorage: LocalStorageService
-  ) {}
+  ) { }
 
   ngOnInit() {
     // this.cid = this.localStorage.get("cid");
@@ -58,7 +58,7 @@ export class ChatComponent implements OnInit {
 
   sendMessage() {
     if (this.newMessage) {
-      this.socket.emit("send-messgae", {
+      this.socket.emit("send-message", {
         text: this.newMessage,
         type: "send",
         created: new Date(),
