@@ -15,13 +15,12 @@ import { CreateDieticianComponent } from './create-dietician/create-dietician.co
 import { ToastrModule } from 'ngx-toastr';
 import { ChatComponent } from './Component/chat/chat.component';
 import { TimeagoModule } from 'ngx-timeago';
-
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatPipePipe } from './pipes/ChatPipe/chat-pipe.pipe';
 const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
-
 import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { ChatDashboardComponent } from './Component/chat-dashboard/chat-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +31,11 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
     EmployeeComponent,
     HelloComponent,
     CreateDieticianComponent,
+    ChatDashboardComponent,
     ChatComponent,
     ChatPipePipe,
-    CreateDietPlanComponent
+    CreateDietPlanComponent,
+
   ],
   imports: [
     BrowserModule,

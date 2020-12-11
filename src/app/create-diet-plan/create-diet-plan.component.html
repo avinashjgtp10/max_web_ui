@@ -2,12 +2,28 @@
     <div class="col-md-9 mx-auto">
         <div class="card">
             <div class="card-header">
-                <h3>Create Diet Plan</h3>
+                <h2>Create Diet Plan</h2>
             </div>
             <div class="col-md-10 mx-auto">
                 <div class="card-body">
                     <div class="form">
                         <form class="form" #frm="ngForm" (ngSubmit)="onSubmit(frm)">
+
+                            <div class="form-group row ">
+                                <label for="username" class="col-md-4 col-form-label">User Name
+                                </label>
+                                <div class="col-md-8">
+                                    <input class="form-control" type="tex" name="username" pattern="[a-zA-Z ]*"
+                                        id="txtUserName" [(ngModel)]="dietUserName" required #username="ngModel"
+                                        placeholder="Please Enter User Name " />
+                                    <div *ngIf="username.touched">
+                                        <div class="alert-danger" *ngIf="username.errors?.required">
+                                            * User Name is Required
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
 
                             <div class="form-group row ">
                                 <label for="startdate" class="col-md-4 col-form-label">Start Date
@@ -95,13 +111,13 @@
                                 <label for="item" class="col-md-4 col-form-label">Item
                                 </label>
                                 <div class="col-md-8">
-                                    <angular2-multiselect [data]="dropdownList" name="products"
-                                        [(ngModel)]="selectedItems" [settings]="dropdownSettings"
-                                        (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"
-                                        (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
+                                    <angular2-multiselect [data]="dropdownList" name="item" [(ngModel)]="selectedItems"
+                                        [settings]="dropdownSettings" (onSelect)="onItemSelect($event)"
+                                        (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)"
+                                        (onDeSelectAll)="onDeSelectAll($event)">
                                     </angular2-multiselect>
-                                    <!-- <div *ngIf="products.touched">
-                                        <div class="alert-danger" *ngIf="products.errors?.required">
+                                    <!-- <div *ngIf="item.touched">
+                                        <div class="alert-danger" *ngIf="item.errors?.required">
                                             * Please select Item
                                         </div>
                                     </div> -->

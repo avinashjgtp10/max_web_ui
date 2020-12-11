@@ -34,15 +34,23 @@ const routes: Routes = [
         path: 'app-create-diet-plan',
         component: CreateDietPlanComponent,
       },
+      // {
+      //   path: "chatDashboard",
+      //   component: ChatDashboardComponent,
+      //   children: [
+      //     {
+      //       path: "chat",
+      //       component: ChatComponent,
+      //     },
+      //   ],
+      // },
       {
         path: "chatDashboard",
         component: ChatDashboardComponent,
-        children: [
-          {
-            path: "chat",
-            component: ChatComponent,
-          },
-        ],
+      },
+      {
+        path: "chat",
+        component: ChatComponent,
       },
     ],
   },
@@ -51,4 +59,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

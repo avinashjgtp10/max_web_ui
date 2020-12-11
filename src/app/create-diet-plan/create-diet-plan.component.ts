@@ -16,6 +16,7 @@ export class CreateDietPlanComponent implements OnInit {
   dietRepetition = "";
   dietDay = "";
   dietTime = "";
+  dietUserName = "";
   resultArray: any = [];
   dropdownList = [];
   selectedItems = [];
@@ -34,12 +35,6 @@ export class CreateDietPlanComponent implements OnInit {
       { "id": 4, "itemName": "Roasted Veggie" },
       { "id": 5, "itemName": "Apples " },
     ];
-    // this.selectedItems = [
-    //   { "id": 2, "itemName": "Boiled Potatoes" },
-    //   { "id": 3, "itemName": "Beans and Legumes" },
-    //   { "id": 4, "itemName": "Leafy Greens" },
-    //   { "id": 5, "itemName": "Apples" }
-    // ];
     this.dropdownSettings = {
       singleSelection: false,
       text: "Select Items",
@@ -70,20 +65,21 @@ export class CreateDietPlanComponent implements OnInit {
    * Form Submitted
    */
   onSubmit(form: NgForm) {
-    debugger
-    var name = "";
-    var items = this.selectedItems;
+    let name = "";
+    let items = this.selectedItems;
     for (var i = 0; i < items.length; i++) {
       console.log(items[i]);
       var dietitem = items[i];
       name = name + " , " + dietitem.itemName;
     }
-    var startDate = this.dietStartDate;
-    var weeks = this.dietWeeks;
-    var time = this.dietTime;
-    var repetition = this.dietRepetition;
-    var day = this.dietDay;
+    let userName = this.dietUserName;
+    let startDate = this.dietStartDate;
+    let weeks = this.dietWeeks;
+    let time = this.dietTime;
+    let repetition = this.dietRepetition;
+    let day = this.dietDay;
     let payload = {
+      dietUserName: userName,
       dietStartDate: startDate,
       dietWeeks: weeks,
       dietTime: time,
