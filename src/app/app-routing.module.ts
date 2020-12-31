@@ -3,11 +3,12 @@ import { NgModule, Component } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { AdminDashboardComponent } from "./Component/admin-dashboard/admin-dashboard.component";
 import { AdminLoginComponent } from "./Component/admin-login/admin-login.component";
-import { EmployeeComponent } from "./Component/employee/employee.component";
+import { CalorieDataComponent } from "./Component/calorie-data/calorie-data.component";
 import { ChatComponent } from "./Component/chat/chat.component";
 import { ChatDashboardComponent } from "./Component/chat-dashboard/chat-dashboard.component";
 import { from } from "rxjs";
 import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
+import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-item.component'
 
 const routes: Routes = [
   {
@@ -19,12 +20,16 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     children: [
       {
-        path: "app-employee",
-        component: EmployeeComponent,
+        path: "calorie-data",
+        component: CalorieDataComponent,
       },
       {
         path: "",
-        component: EmployeeComponent,
+        component: CalorieDataComponent,
+      },
+      {
+        path:"add-new-item",
+        component:AddNewItemComponent
       },
       {
         path: "addDietician",
@@ -36,7 +41,7 @@ const routes: Routes = [
       },
       {
         path: "chatDashboard",
-        component: ChatDashboardComponent,
+        component: ChatComponent,
         children: [
           {
             path: "chat",

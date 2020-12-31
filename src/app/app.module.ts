@@ -9,19 +9,21 @@ import { DataTableComponent } from './Component/data-table/data-table.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgmaterialModule } from './Modules/ngmaterial/ngmaterial.module';
-import { EmployeeComponent } from './Component/employee/employee.component';
+import { CalorieDataComponent } from './Component/calorie-data/calorie-data.component';
 import { HelloComponent } from './Component/hello/hello.component';
 import { CreateDieticianComponent } from './create-dietician/create-dietician.component';
 import { ToastrModule } from 'ngx-toastr';
 import { ChatComponent } from './Component/chat/chat.component';
 import { TimeagoModule } from 'ngx-timeago';
+import {chaturl} from "../environments/base"
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatPipePipe } from './pipes/ChatPipe/chat-pipe.pipe';
-const config: SocketIoConfig = { url: 'http://localhost:5000', options: {} };
+const config: SocketIoConfig = { url: chaturl, options: {} };
 
 import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-item.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +31,13 @@ import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
     AdminLoginComponent,
     AdminDashboardComponent,
     DataTableComponent,
-    EmployeeComponent,
+    CalorieDataComponent,
     HelloComponent,
     CreateDieticianComponent,
     ChatComponent,
     ChatPipePipe,
-    CreateDietPlanComponent
+    CreateDietPlanComponent,
+    AddNewItemComponent
   ],
   imports: [
     BrowserModule,

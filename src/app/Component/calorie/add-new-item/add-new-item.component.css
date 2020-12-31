@@ -1,0 +1,9 @@
+.panel-body {
+  height: 35rem;
+  overflow-y: scroll;
+}
+.panel-heading , .panel-footer {
+  height: 3rem;
+  text-align: center;
+  background: #dbdbf3;
+}
