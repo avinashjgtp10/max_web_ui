@@ -18,13 +18,13 @@ export interface Data {
 const ELEMENT_DATA: Data[] = [
 ];
 @Component({
-  selector: 'app-employee',
-  templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  selector: 'calorie-data',
+  templateUrl: './calorie-data.component.html',
+  styleUrls: ['./calorie-data.component.css']
 })
 
 
-export class EmployeeComponent implements OnInit {
+export class CalorieDataComponent implements OnInit {
 
   resultsLength = 0;
 

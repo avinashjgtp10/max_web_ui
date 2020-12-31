@@ -1,0 +1,107 @@
+<div
+  class="panel panel-default col-lg-8 col-md-8 col-sm-8 container justify-content-center item-panel"
+>
+  <div class="panel-heading well">Enter Calorie Item</div>
+  <div class="panel-body">
+    <form [formGroup]="calorieForm">
+      <div class="form-group">
+        <label for="calorieItem">Item</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="c_item" 
+          required
+          id="c_item"
+          placeholder="Enter Calorie item"
+        />
+        <p>
+            Form Data:{{calorieForm}}
+            Form Status: {{ calorieForm.status }}
+          </p>
+      </div>
+      <div class="form-group">
+        <label for="categorySelect">Category (Shift + right click)</label>
+        <select class="form-control" multiple id="categorySelect" formControlName="c_category">
+          <option value="evening_snack">Evening Snack</option>
+          <option value="breakfast">breakfast</option>
+          <option value="starters">starters</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount </label>
+        <input
+          type="text"
+          class="form-control"
+          id="amount"
+          formControlName="c_amount"
+          placeholder="Enter Calorie item"
+        />
+      </div>
+      <div class="form-group">
+        <label for="categorySelect">Measure (Shift + right click)</label>
+        <select class="form-control" formControlName="c_measure" multiple id="categorySelect">
+          <option value="gm">Gram</option>
+          <option value="ml">Milliliter</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="calorie">Calorie </label>
+        <input
+          type="text"
+          class="form-control"
+          id="calorie"
+          formControlName="c_calories"
+          placeholder="Enter item Calorie"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="protein">Proteins </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="c_proteins"
+          id="protein"
+          placeholder="Enter item protein"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="carbohydrates">Carbohydrates </label>
+        <input
+          type="text"
+          class="form-control"
+          id="carbohydrates"
+          formControlName="c_carbohydrates"
+          placeholder="Enter item carbohydrates"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fibre">Fats </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="c_fats"
+          id="fat"
+          placeholder="Enter item fat"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fibre">Fibres </label>
+        <input
+          type="text"
+          class="form-control"
+          id="fibre"
+          placeholder="Enter item fat"
+        />
+      </div>
+    </form>
+  </div>
+  <div class="panel-footer justify-content-center">
+    <button type="button" class="btn btn-primary" (click)="submitFormData()">Submit</button>
+  </div>
+</div>
