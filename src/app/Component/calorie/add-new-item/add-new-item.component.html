@@ -16,7 +16,7 @@
         />
         <p>
             Form Data:{{calorieForm}}
-            Form Status: {{ calorieForm.status }}
+            Form Status: {{ calorieForm.valid }}
           </p>
       </div>
       <div class="form-group">
@@ -95,13 +95,14 @@
         <input
           type="text"
           class="form-control"
+          formControlName="c_fibres" 
           id="fibre"
-          placeholder="Enter item fat"
+          placeholder="Enter item Fibre"
         />
       </div>
     </form>
   </div>
   <div class="panel-footer justify-content-center">
-    <button type="button" class="btn btn-primary" (click)="submitFormData()">Submit</button>
+    <button type="button" [disabled]="!calorieForm.valid" class="btn btn-primary" (click)="submitFormData()">Submit</button>
   </div>
 </div>
