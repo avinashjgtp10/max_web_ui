@@ -34,6 +34,12 @@ export class AddNewItemComponent implements OnInit {
 
   submitFormData() {
     console.log(this.calorieForm.value);
+    this.calorieForm.value.c_category = JSON.stringify(
+      this.calorieForm.value.c_category
+    );
+    this.calorieForm.value.c_measure = JSON.stringify(
+      this.calorieForm.value.c_measure
+    );
     this.service
       .addNewCalorieItem(this.calorieForm.value)
       .subscribe((res: any) => {
