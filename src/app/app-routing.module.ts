@@ -9,6 +9,8 @@ import { ChatDashboardComponent } from "./Component/chat-dashboard/chat-dashboar
 import { from } from "rxjs";
 import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
 import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-item.component'
+import { AddSlotComponent } from './Component/add-slot/add-slot.component'
+import { DieticianCalenderComponent } from './Component/dietician-calender/dietician-calender.component'
 
 const routes: Routes = [
   {
@@ -38,6 +40,14 @@ const routes: Routes = [
       {
         path: 'app-create-diet-plan',
         component: CreateDietPlanComponent,
+      },
+      {
+        path:'add-slot',
+        component:AddSlotComponent
+      },
+      {
+        path:'dietcian-calender',
+        component:DieticianCalenderComponent
       },
       {
         path: "chatDashboard",

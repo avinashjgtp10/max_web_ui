@@ -27,7 +27,6 @@ export class DataTableComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
   ngOnInit() {
-    console.log(this.tableData);
     this.dataSource = new MatTableDataSource(this.tableData);
     this.dataSource.sort = this.sort;
     this.resultsLength = this.dataSource;

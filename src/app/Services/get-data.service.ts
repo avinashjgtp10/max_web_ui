@@ -42,7 +42,7 @@ export class GetDataService {
   }
 
   getData() {
-    return this._http.get(baseurl+"calorieItems");
+    return this._http.get(baseurl + "calorieItems");
   }
   addDietician(item: any): Observable<JSON> {
     return this._http
@@ -57,6 +57,34 @@ export class GetDataService {
   addNewCalorieItem(data: any): Observable<JSON> {
     return this._http
       .post<JSON>(baseurl + "calorieItems", data, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  /***
+   * Add Slot
+   */
+
+  addSlot(data: any): Observable<JSON> {
+    return this._http
+      .post<JSON>(baseurl + "dietcian/slotBooking", data, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  /***
+   * Dietcian login
+   */
+  dietcianLogin(data): Observable<JSON> {
+    return this._http
+      .post<JSON>(baseurl + "/dietcian/login", data, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Get Dietcian Booked Appointmet
+   */
+  getDietcianAppointment(did: any) {
+    return this._http
+      .get<JSON>(baseurl + `/dietcian/myAppointment/${did}`, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 }
