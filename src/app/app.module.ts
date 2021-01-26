@@ -24,6 +24,30 @@ const config: SocketIoConfig = { url: chaturl, options: {} };
 import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-item.component';
+import { AddSlotComponent } from './Component/add-slot/add-slot.component';
+import { DieticianCalenderComponent } from './Component/dietician-calender/dietician-calender.component';
+
+/***
+ * Calender Module
+ */
+
+
+// import { CalendarModule, DateAdapter } from 'angular-calendar';
+// import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
+
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+import interactionPlugin from '@fullcalendar/interaction'; // 
+// import { FullCalendarModule } from 'ng-fullcalendar';
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,9 +61,12 @@ import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-it
     ChatComponent,
     ChatPipePipe,
     CreateDietPlanComponent,
-    AddNewItemComponent
+    AddNewItemComponent,
+    AddSlotComponent,
+    DieticianCalenderComponent
   ],
   imports: [
+    FullCalendarModule,
     BrowserModule,
     ReactiveFormsModule,
     AngularMultiSelectModule,
@@ -55,7 +82,7 @@ import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-it
       progressBar: true,
       progressAnimation: 'increasing',
       positionClass: 'toast-top-center',
-    }),
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

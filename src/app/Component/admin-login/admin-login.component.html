@@ -1,51 +1,111 @@
 <div class="container">
-    <div class="d-flex justify-content-center">
-        <div class="main">
-            <div class="d-flex justify-content-center">
-                <img src="assets\admin.png" alt="HTML5 Icon">
-            </div>
-            <h2> Admin</h2>
-            <form id="form_id" class="" name="myform" [formGroup]="formGroup">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email :</label>
-                    <input type="text" name="username" class="form-control" formControlName="email" id="username" aria-describedby="emailHelp" placeholder="Enter Email">
-                </div>
-                <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.email">
-                        <div class="error-message text-danger" *ngIf="formGroup.get('email').hasError(validation.type) && (formGroup.get('email').dirty || formGroup.get('email').touched)">
-                            <span name="information-circle-outline"></span> {{ validation.message }}
-                        </div>
-                    </ng-container>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Password :</label>
-                    <div class="input-group">
-                        <input [type]="PasswordfieldTextType ? 'text':'password'" name="password" formControlName="password" class="form-control" id="password" placeholder="Enter password" />
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                  <i class="fa" [ngClass]="{'fa-eye-slash' : !PasswordfieldTextType,'fa-eye' : PasswordfieldTextType}"
-                    id="btn2" (click)="toggleFieldTextType()"></i>
-                </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="validation-errors">
-                    <ng-container *ngFor="let validation of validation_messages.password">
-                        <p class="error-message text-danger" *ngIf="formGroup.get('password').hasError(validation.type) && (formGroup.get('password').dirty || formGroup.get('password').touched)">
-                            <span name="information-circle-outline"></span> {{ validation.message }}
-                        </p>
-                    </ng-container>
-                </div>
-                <div *ngIf="alert" class="alert alert-warning alert-dismissible fade show">
-                    <strong>Warning!</strong> Please enter a valid UserName & Password in all the required fields before proceeding.
-                </div>
-                <div>
-                    <button class="btn bg-info " type="submit" id="btn1" (click)="btnClick()" [disabled]="!formGroup.valid" [ngStyle]="{'cursor': (!formGroup.valid? 'not-allowed':'pointer')}">
-              <b> Login</b>
-            </button>
-                </div>
-
-            </form>
+  <div class="d-flex justify-content-center">
+    <div class="main">
+      <div class="d-flex justify-content-center">
+        <img src="assets\admin.png" alt="HTML5 Icon" />
+      </div>
+      <h2>Admin</h2>
+      <form id="form_id" class="" name="myform" [formGroup]="formGroup">
+        <div class="form-group">
+          <label for="exampleInputEmail1">User Type</label>
+          <select
+            class="form-control"
+            formControlName="userType"
+            id="exampleFormControlSelect1"
+          >
+            <option value="">Select User Type</option>
+            <option value="admin">Admin</option>
+            <option value="dietician">Dietician</option>
+          </select>
         </div>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.userType">
+            <div
+              class="error-message text-danger"
+              *ngIf="formGroup.get('userType').hasError(validation.type) && (formGroup.get('userType').dirty || formGroup.get('userType').touched)"
+            >
+              <span name="information-circle-outline"></span> {{
+              validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email :</label>
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            formControlName="email"
+            id="username"
+            aria-describedby="emailHelp"
+            placeholder="Enter Email"
+          />
+        </div>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.email">
+            <div
+              class="error-message text-danger"
+              *ngIf="formGroup.get('email').hasError(validation.type) && (formGroup.get('email').dirty || formGroup.get('email').touched)"
+            >
+              <span name="information-circle-outline"></span> {{
+              validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Password :</label>
+          <div class="input-group">
+            <input
+              [type]="PasswordfieldTextType ? 'text':'password'"
+              name="password"
+              formControlName="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter password"
+            />
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i
+                  class="fa"
+                  [ngClass]="{'fa-eye-slash' : !PasswordfieldTextType,'fa-eye' : PasswordfieldTextType}"
+                  id="btn2"
+                  (click)="toggleFieldTextType()"
+                ></i>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password">
+            <p
+              class="error-message text-danger"
+              *ngIf="formGroup.get('password').hasError(validation.type) && (formGroup.get('password').dirty || formGroup.get('password').touched)"
+            >
+              <span name="information-circle-outline"></span> {{
+              validation.message }}
+            </p>
+          </ng-container>
+        </div>
+        <div
+          *ngIf="alert"
+          class="alert alert-warning alert-dismissible fade show"
+        >
+          <strong>Warning!</strong> Please enter a valid UserName & Password in
+          all the required fields before proceeding.
+        </div>
+        <div>
+          <button
+            class="btn bg-info"
+            type="submit"
+            id="btn1"
+            (click)="btnClick()"
+            [disabled]="!formGroup.valid"
+            [ngStyle]="{'cursor': (!formGroup.valid? 'not-allowed':'pointer')}"
+          >
+            <b> Login</b>
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
