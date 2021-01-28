@@ -2680,16 +2680,16 @@ ChatPipePipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe
 /*!**********************************!*\
   !*** ./src/environments/base.ts ***!
   \**********************************/
-/*! exports provided: chaturl, baseurl */
+/*! exports provided: baseurl, chaturl */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "chaturl", function() { return chaturl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "baseurl", function() { return baseurl; });
-// export const baseurl = "https://maxfit.herokuapp.com/api/v1/";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "chaturl", function() { return chaturl; });
+const baseurl = "https://maxfit.herokuapp.com/api/v1/";
 const chaturl = "https://maxfit.herokuapp.com/";
-const baseurl = "http://localhost:5000/api/v1/";
+//export const baseurl = "http://localhost:5000/api/v1/";
 
 
 /***/ }),
