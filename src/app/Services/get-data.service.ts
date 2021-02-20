@@ -87,4 +87,74 @@ export class GetDataService {
       .get<JSON>(baseurl + `/dietcian/myAppointment/${did}`, this.httpOptions)
       .pipe(catchError(this.handleError));
   }
+
+  /***
+   * get premium  User List
+   */
+  getPremiumUsers(value: any) {
+    return this._http
+      .get<JSON>(baseurl + `/user/getPremimunUsers/${value}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Get Dietcian List
+   */
+  getDietcianList(value: any) {
+    return this._http
+      .get<JSON>(baseurl + `/dietcian/allDietcian/${value}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Assign Dietcian
+   */
+  assignDietcian(payload: any) {
+    return this._http
+      .post<JSON>(
+        baseurl + "/dietcian/assignDietcian/",
+        payload,
+        this.httpOptions
+      )
+      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Get Assigned User to Dietcian
+   */
+  getAssignedClient(value) {
+    return this._http
+      .get<JSON>(
+        baseurl + `/dietcian/getAssignedClient/${value}`,
+        this.httpOptions
+      )
+      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Get Client Details By ID
+   */
+  getClientDataById(value: any) {
+    return this._http
+      .get<JSON>(baseurl + `/client/${value}`, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * Save Chat
+   */
+  saveChatDietcianAndCLient(payload: any) {
+    return this._http
+      .post<JSON>(baseurl + "/chat/save", payload, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+  /***
+   * Get Chat Histroy
+   */
+  chatHistroyWithDietcian(payload: any) {
+    return this._http
+      .post<JSON>(baseurl + "/chat/history", payload, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
 }

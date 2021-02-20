@@ -7,10 +7,12 @@ import { CalorieDataComponent } from "./Component/calorie-data/calorie-data.comp
 import { ChatComponent } from "./Component/chat/chat.component";
 import { ChatDashboardComponent } from "./Component/chat-dashboard/chat-dashboard.component";
 import { from } from "rxjs";
-import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
-import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-item.component'
-import { AddSlotComponent } from './Component/add-slot/add-slot.component'
-import { DieticianCalenderComponent } from './Component/dietician-calender/dietician-calender.component'
+import { CreateDietPlanComponent } from "./create-diet-plan/create-diet-plan.component";
+import { AddNewItemComponent } from "./Component/calorie/add-new-item/add-new-item.component";
+import { AddSlotComponent } from "./Component/add-slot/add-slot.component";
+import { DieticianCalenderComponent } from "./Component/dietician-calender/dietician-calender.component";
+import { AssignDietcianComponent } from "./Component/Admin/assign-dietcian/assign-dietcian.component";
+import { AdminWelcomePageComponent } from "./Component/admin-welcome-page/admin-welcome-page.component";
 
 const routes: Routes = [
   {
@@ -22,42 +24,44 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     children: [
       {
+        path: "assign-dietcian",
+        component: AssignDietcianComponent,
+      },
+      {
         path: "calorie-data",
         component: CalorieDataComponent,
       },
       {
         path: "",
-        component: CalorieDataComponent,
+        component: AdminWelcomePageComponent,
       },
       {
-        path:"add-new-item",
-        component:AddNewItemComponent
+        path: "add-new-item",
+        component: AddNewItemComponent,
       },
       {
         path: "addDietician",
         component: CreateDieticianComponent,
       },
       {
-        path: 'app-create-diet-plan',
+        path: "app-create-diet-plan",
         component: CreateDietPlanComponent,
       },
       {
-        path:'add-slot',
-        component:AddSlotComponent
+        path: "add-slot",
+        component: AddSlotComponent,
       },
       {
-        path:'dietcian-calender',
-        component:DieticianCalenderComponent
+        path: "dietcian-calender",
+        component: DieticianCalenderComponent,
       },
       {
         path: "chatDashboard",
+        component: ChatDashboardComponent,
+      },
+      {
+        path: "chat",
         component: ChatComponent,
-        children: [
-          {
-            path: "chat",
-            component: ChatComponent,
-          },
-        ],
       },
     ],
   },

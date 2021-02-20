@@ -1,58 +1,59 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { AdminLoginComponent } from './Component/admin-login/admin-login.component';
-import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
-import { DataTableComponent } from './Component/data-table/data-table.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { NgmaterialModule } from './Modules/ngmaterial/ngmaterial.module';
-import { CalorieDataComponent } from './Component/calorie-data/calorie-data.component';
-import { HelloComponent } from './Component/hello/hello.component';
-import { CreateDieticianComponent } from './create-dietician/create-dietician.component';
-import { ToastrModule } from 'ngx-toastr';
-import { ChatComponent } from './Component/chat/chat.component';
-import { TimeagoModule } from 'ngx-timeago';
-import {chaturl} from "../environments/base"
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { AdminLoginComponent } from "./Component/admin-login/admin-login.component";
+import { AdminDashboardComponent } from "./Component/admin-dashboard/admin-dashboard.component";
+import { DataTableComponent } from "./Component/data-table/data-table.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { NgmaterialModule } from "./Modules/ngmaterial/ngmaterial.module";
+import { CalorieDataComponent } from "./Component/calorie-data/calorie-data.component";
+import { HelloComponent } from "./Component/hello/hello.component";
+import { CreateDieticianComponent } from "./create-dietician/create-dietician.component";
+import { ToastrModule } from "ngx-toastr";
+import { ChatComponent } from "./Component/chat/chat.component";
+import { TimeagoModule } from "ngx-timeago";
+import { chaturl } from "../environments/base";
+import { CommonModule } from "@angular/common";
 
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-import { ChatPipePipe } from './pipes/ChatPipe/chat-pipe.pipe';
+import { SocketIoModule, SocketIoConfig } from "ngx-socket-io";
+import { ChatPipePipe } from "./pipes/ChatPipe/chat-pipe.pipe";
 const config: SocketIoConfig = { url: chaturl, options: {} };
 
-import { CreateDietPlanComponent } from './create-diet-plan/create-diet-plan.component';
-import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
-import { AddNewItemComponent } from './Component/calorie/add-new-item/add-new-item.component';
-import { AddSlotComponent } from './Component/add-slot/add-slot.component';
-import { DieticianCalenderComponent } from './Component/dietician-calender/dietician-calender.component';
-
+import { CreateDietPlanComponent } from "./create-diet-plan/create-diet-plan.component";
+import { AngularMultiSelectModule } from "angular2-multiselect-dropdown";
+import { AddNewItemComponent } from "./Component/calorie/add-new-item/add-new-item.component";
+import { AddSlotComponent } from "./Component/add-slot/add-slot.component";
+import { DieticianCalenderComponent } from "./Component/dietician-calender/dietician-calender.component";
+import { ChatDashboardComponent } from "./Component/chat-dashboard/chat-dashboard.component";
 /***
  * Calender Module
  */
 
-
 // import { CalendarModule, DateAdapter } from 'angular-calendar';
 // import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
-
-import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
-import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
-import interactionPlugin from '@fullcalendar/interaction'; // 
+import { FullCalendarModule } from "@fullcalendar/angular"; // the main connector. must go first
+import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin
+import interactionPlugin from "@fullcalendar/interaction";
+import { AssignDietcianComponent } from "./Component/Admin/assign-dietcian/assign-dietcian.component";
+import { AdminWelcomePageComponent } from "./Component/admin-welcome-page/admin-welcome-page.component"; //
+import { from } from "rxjs";
 // import { FullCalendarModule } from 'ng-fullcalendar';
 
-FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+FullCalendarModule.registerPlugins([
+  // register FullCalendar plugins
   dayGridPlugin,
-  interactionPlugin
+  interactionPlugin,
 ]);
-
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
+    ChatDashboardComponent,
     AdminDashboardComponent,
     DataTableComponent,
     CalorieDataComponent,
@@ -63,9 +64,12 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CreateDietPlanComponent,
     AddNewItemComponent,
     AddSlotComponent,
-    DieticianCalenderComponent
+    DieticianCalenderComponent,
+    AssignDietcianComponent,
+    AdminWelcomePageComponent,
   ],
   imports: [
+    CommonModule,
     FullCalendarModule,
     BrowserModule,
     ReactiveFormsModule,
@@ -80,11 +84,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ToastrModule.forRoot({
       timeOut: 6000,
       progressBar: true,
-      progressAnimation: 'increasing',
-      positionClass: 'toast-top-center',
-    })
+      progressAnimation: "increasing",
+      positionClass: "toast-top-center",
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

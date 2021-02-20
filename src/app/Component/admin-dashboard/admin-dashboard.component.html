@@ -6,75 +6,28 @@
       <div id="sidebar-wrapper">
         <div class="sidebar-heading">Start Bootstrap</div>
         <div class="list-group list-group-flush">
-          <ul class="list-unstyled components">
-            <li class="active" *ngIf="userRole === 'admin'">
+          <ul
+            class="list-unstyled components"
+            *ngFor="let menu of sideMenu;let i=index;"
+          >
+            <li class="active" *ngIf="userRole === menu.role">
               <a
-                href="#homeSubmenu"
+                href="#{{menu.key}}"
                 data-toggle="collapse"
                 aria-expanded="false"
                 class="dropdown-toggle"
-                >Calories</a
+                >{{menu.title}}</a
               >
-              <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                  <a
-                    routerLink="/app-admin-dashboard/calorie-data"
-                    routerLinkActive="active"
-                    >Calories Item</a
-                  >
-                </li>
-                <li>
-                  <a
-                    routerLink="/app-admin-dashboard/add-new-item"
-                    routerLinkActive="active"
-                  >
-                    Add New item
-                  </a>
-                </li>
-                <li>
-                  <a
-                    routerLink="/app-admin-dashboard/addDietician"
-                    routerLinkActive="active"
-                    >Add Dietician
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="active" *ngIf="userRole === 'dietician'">
-              <a
-                href="#homeDieticianSubmenu"
-                data-toggle="collapse"
-                aria-expanded="false"
-                class="dropdown-toggle"
-                >Dietician</a
+              <ul
+                class="collapse list-unstyled"
+                *ngFor="let subMenu of menu.menu;let i=index;"
+                id="{{menu.key}}"
               >
-              <ul class="collapse list-unstyled" id="homeDieticianSubmenu">
                 <li>
                   <a
-                    routerLink="/app-admin-dashboard/chatDashboard"
+                    routerLink="{{subMenu.routerLink}}"
                     routerLinkActive="active"
-                    >Chat Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a
-                    routerLink="/app-admin-dashboard/app-create-diet-plan"
-                    routerLinkActive="active"
-                    >Create Diet Plan</a
-                  >
-                </li>
-                <li>
-                  <a
-                    routerLink="/app-admin-dashboard/add-slot"
-                    routerLinkActive="active"
-                    >Add Slot</a
-                  >
-                </li>
-                <li>
-                  <a
-                    routerLink="/app-admin-dashboard/dietcian-calender"
-                    routerLinkActive="active"
-                    >Appointment</a
+                    >{{subMenu.title}}</a
                   >
                 </li>
               </ul>

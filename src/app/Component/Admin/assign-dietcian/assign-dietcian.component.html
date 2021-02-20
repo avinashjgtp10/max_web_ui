@@ -1,0 +1,98 @@
+<section>
+  <div class="card text-center">
+    <div class="card-header">
+      Dietcian Assignment
+    </div>
+    <div class="card-body row">
+      <div class="col-lg-6">
+        <div class="articles card">
+          <div class="card-header d-flex align-items-center">
+            <input
+              class="form-control"
+              placeholder="Search Dietcian"
+              name="srch-term"
+              (keyup)="onDietcian($event.target.value  )"
+              id="srch-term"
+              type="text"
+            />
+          </div>
+
+          <div class="card-body user-card-body no-padding">
+            <div
+              class="item d-flex align-items-center"
+              *ngFor="let diet of dietcian"
+            >
+              <div class="image">
+                <label class="btn btn-default active">
+                  <input
+                    type="radio"
+                    id="{{diet.id}}"
+                    (change)="radioValue($event)"
+                    name="dietcianRadio"
+                    value="{{diet.id}}"
+                  />
+                </label>
+              </div>
+              <div class="text">
+                <a href="#"> <h3 class="h5">{{diet.name}}</h3></a
+                ><small>Rating{{diet.rating}} </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="articles card">
+          <div class="card-header d-flex align-items-center">
+            <input
+              class="form-control"
+              placeholder="Search User"
+              (keyup)="onClient($event.target.value  )"
+              name="srch-term"
+              id="srch-term"
+              type="text"
+            />
+          </div>
+          <div class="card-body user-card-body no-padding">
+            <div
+              class="item d-flex align-items-center"
+              *ngFor="let user of userList"
+            >
+              <div class="image">
+                <div class="custom-control-lg custom-control custom-checkbox">
+                  <input
+                    class="custom-control-input"
+                    id="{{user.id}}"
+                    type="checkbox"
+                    (change)="checkValue($event)"
+                    value="{{user.id}}"
+                  />
+                  <label class="custom-control-label" for="{{user.id}}">
+                  </label>
+                </div>
+              </div>
+              <div class="text">
+                <a href="#"> <h3 class="h5">{{user.name}}</h3></a>
+                <h3>{{user.email}}</h3>
+                <small
+                  ><b> Fitness Objective objective {{user.objective}}</b>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <button
+        [disabled]="!(this.selectDietcian !== null && this.selectUsers.length > 0)"
+        type="button"
+        class="btn btn-primary"
+        (click)="assignDietcian()"
+      >
+        Assign
+      </button>
+    </div>
+  </div>
+</section>
